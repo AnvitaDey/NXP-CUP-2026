@@ -71,4 +71,4 @@ NXP-CUP-2026/
 ## Authors
 
 Developed for **NXP CUP India 2026**  
-Computer Vision Team
+Team 4249
