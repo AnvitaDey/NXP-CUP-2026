@@ -1,72 +1,74 @@
-# NXP CUP INDIA 2026 – Computer Vision
+# NXP CUP India 2026 – Computer Vision
 
-YOLO11-based traffic sign detection module developed for the NXP Cup India 2026 autonomous vehicle competition.
+This repository contains the Computer Vision module developed for the **NXP CUP India 2026** autonomous RC car competition.
 
-The objective of this module is to perform real-time traffic sign detection from the onboard camera and provide detected sign information to the ROS navigation pipeline.
-
----
-
-## Features
-
-- YOLO11s object detector
-- 9 traffic sign classes
-- Real-time inference
-- Optimized for autonomous RC vehicle deployment
-- Pretrained using Ultralytics YOLO11
-
----
-
-## Detected Classes
-
-| ID | Class |
-|----|-------|
-| 0 | A |
-| 1 | B |
-| 2 | C |
-| 3 | Left |
-| 4 | Right |
-| 5 | Straight |
-| 6 | X |
-| 7 | Y |
-| 8 | Z |
+The objective of this module is to perform real-time traffic sign detection using **YOLO11s**, enabling the vehicle to identify road signs and provide detection results to the navigation and control pipeline.
 
 ---
 
 ## Model
 
-Architecture:
+- **Architecture:** YOLO11s
+- **Framework:** Ultralytics YOLO
+- **Input Size:** 512 × 512
+- **Number of Classes:** 9
 
-YOLO11s
+### Detected Classes
 
-Input Resolution:
-
-512 × 512
-
-Training Images:
-
-1896
-
-Validation Images:
-
-90
-
-Framework:
-
-Ultralytics YOLO11
+- A
+- B
+- C
+- Left
+- Right
+- Straight
+- X
+- Y
+- Z
 
 ---
 
-## Performance
+## Model Performance
 
 | Metric | Score |
-|---------|------:|
-| Precision | 97.7% |
-| Recall | 96.0% |
-| mAP@50 | 96.8% |
-| mAP@50-95 | 73.7% |
+|--------|-------:|
+| Precision | **97.7%** |
+| Recall | **96.0%** |
+| mAP@50 | **96.8%** |
+| mAP@50-95 | **73.7%** |
 
-Training performed on an NVIDIA Tesla T4 GPU using Kaggle.
+Training was performed on an NVIDIA Tesla T4 GPU using transfer learning with the pretrained YOLO11s model.
 
 ---
 
 ## Repository Structure
+
+```
+NXP-CUP-2026/
+│
+├── models/
+│     └── best.pt          # Trained YOLO11s model
+│
+├── metrics/
+│     ├── results.png
+│     ├── confusion_matrix.png
+│
+├── dataset/
+│     └── data.yaml        # Dataset configuration
+│
+└── README.md
+```
+
+---
+
+## Notes
+
+- `models/best.pt` contains the final trained model.
+- `metrics/` contains evaluation plots and training results.
+- The dataset is **not included** in this repository. Only the dataset configuration (`data.yaml`) is provided.
+
+---
+
+## Authors
+
+Developed for **NXP CUP India 2026**  
+Computer Vision Team
